@@ -105,4 +105,7 @@ x86/
 ipch/
 *.VC.VC.opendb
 *.VC.db
+*.sln
+*.vcxproj
+*.filters
 
