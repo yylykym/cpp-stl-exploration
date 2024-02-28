@@ -27,7 +27,6 @@ bool find_value(std::vector<int>::iterator begin, std::vector<int>::iterator end
 /// <param name="end"></param>
 /// <param name="value"></param>
 /// <returns></returns>
-
 std::vector<int>::iterator find_iter_value(std::vector<int>::iterator begin, std::vector<int>::iterator end, int value)
 {
 	for (auto it = begin; it != end; ++it)
@@ -39,3 +38,51 @@ std::vector<int>::iterator find_iter_value(std::vector<int>::iterator begin, std
 	}
 	return end; // 返回 end 迭代器表示未找到
 }
+/// <summary>
+/// 
+/// </summary>
+/// <param name="vec1"></param>
+/// <param name="vec2"></param>
+/// <returns></returns>
+bool areVectorsEqual(std::vector<int> vec1, std::vector<int> vec2)
+{
+	return vec1 == vec2;
+}
+
+/// <summary>
+/// 
+/// </summary>
+/// <param name="list"></param>
+/// <param name="vec"></param>
+/// <returns></returns>
+bool compareListAndVectorElements(std::list<int> list, std::vector<int> vec)
+{
+
+	return (std::vector<int>(list.begin(), list.end()) == vec);
+}
+
+/*
+	编写函数，接受一个forward list<string>和两个string共三个参
+数。函数应在链表中查找第一个string,并将第二个string插入到紧接着第一个
+string之后的位置。若第一个string未在链表中，则将第二个string插入到链表
+末尾
+*/
+
+void change(std::forward_list<std::string>& fl,  std::string const first, std::string const second)
+{
+	auto curr = fl.begin();
+	while (curr != fl.end())
+	{
+		if (*curr == first)
+		{
+			curr = fl.insert_after(curr, second);
+		}
+		else
+		{
+			curr++;
+		}
+	}
+}
+
+
+
